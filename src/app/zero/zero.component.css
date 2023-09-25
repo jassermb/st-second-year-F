@@ -1,0 +1,147 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Hero image section */
+.hero-image {
+    background-image: url('https://img.freepik.com/photos-gratuite/famille-fils-choisir-voiture-dans-salle-exposition_1303-14206.jpg?w=826&t=st=1690103672~exp=1690104272~hmac=9f7ed1eb3a0e72952b7ce193f2423985fad5d2f0f5a752af48a372e21c359f1d');
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-image h1 {
+    font-size: 36px;
+}
+
+/* Intro section */
+.intro-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+.intro-section .section-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro-section .section-description {
+    text-align: center;
+}
+
+/* Video section */
+.video-section {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+}
+
+.video-section .section-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-section video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* Feature cards */
+.features-section {
+    padding: 40px 0;
+}
+
+.features-section .feature-card {
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.features-section .feature-card .card-img-top {
+    max-width: 100px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.features-section .card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.features-section .card-text {
+    color: #777;
+}
+
+.features-section .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.features-section .btn-primary:hover {
+    background-color: #0056b3;
+}
+video {
+    width: 100%; /* Ajuste la largeur de la vidéo pour qu'elle occupe la largeur de son conteneur */
+    max-width: 800px; /* Définit une largeur maximale pour la vidéo (ajustez selon vos besoins) */
+    height: auto; /* Ajuste automatiquement la hauteur pour conserver les proportions d'origine */
+    display: block; /* Permet de centrer la vidéo horizontalement sur la page */
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+  }
+  /* Appliquer une mise en page en colonnes pour les images et les légendes */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Styliser les images pour qu'elles s'adaptent à la grille */
+  .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Centrer le texte sous les images */
+  .image p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Styliser la description de la section */
+
+  
+  /* Ajouter des styles supplémentaires pour attirer l'attention des clients */
+  .galerie {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ajouter une animation de survol sur les images */
+  .image img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }

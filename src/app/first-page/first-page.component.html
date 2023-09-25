@@ -1,0 +1,25 @@
+<br>
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+    Plus 
+  </button>
+</p>
+<div style="min-height: 120px;">
+  <div class="collapse width" id="collapseWidthExample">
+    <div class="card card-body" style="width: 320px;">
+       Pour plus autre detaiile il peut cliquer sur chacu logo de Marque ou bien par Notre NavBar pour plus facile 
+    </div>
+  </div>
+</div>
+<div class="tous" style="background-color: aliceblue; margin: 4%;">
+  <div class="card-vertical" *ngFor="let item of data">
+    <div class="card-image">
+      <a [routerLink]="['/second']" (click)="redirectToDataTablePage(item.vehicleMake)"> 
+        <img src="{{ item.makerImage }}" alt="Image de la carte">
+      </a>
+    </div>
+    <div class="card-content">
+      <h2 class="card-title">{{ item.vehicleMake }}</h2>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+    <input [(ngModel)]="filterByMake" class="filter-input" placeholder="Filter by Make" (input)="applyFilters()">
+    <input [(ngModel)]="searchText" class="filter-input" placeholder="Search" (input)="applyFilters()">
+  
+    <p-table [value]="filteredData" [paginator]="true" [rows]="itemsPerPage" [totalRecords]="filteredData.length" (onPage)="onPageChange($event)">
+      <ng-template pTemplate="header">
+        <tr>
+            <th>Vehicle Make</th>
+            <th>Vehicle Model</th>
+            <th>Drivetrain Power (HP)</th>
+            <th>Vehicle Model Version</th>
+            <th>Performance Acceleration (sec)</th>
+            <th>Performance Topspeed (km/h)</th>
+            <th>Range WLTP (km)</th>
+            <th>Range Real (km)</th>
+            <th>Efficiency Real (kWh/100 km)</th>
+            <th>Charge Plug</th>
+            <th>Charge Standard Power (kW)</th>
+            <th>Charge Standard Phase</th>
+            <th>Charge Standard Phase Amp</th>
+            <th>Battery Capacity Full (kWh)</th>
+            <th>Images</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-vehicle>
+        <tr>
+          <td>{{ vehicle.vehicleMake }}</td>
+          <td>{{ vehicle.vehicleModel }}</td>
+          <td>{{ vehicle.drivetrainPowerHP }}</td>
+          <td>{{ vehicle.vehicleModelVersion }}</td>
+          <td>{{ vehicle.performanceAcceleration }}</td>
+          <td>{{ vehicle.performanceTopspeed }}</td>
+          <td>{{ vehicle.rangeWLTP }}</td>
+          <td>{{ vehicle.rangeReal}}</td>
+          <td>{{ vehicle.efficiencyReal }}</td>
+          <td>{{ vehicle.chargePlug }}</td>
+          <td>{{ vehicle.chargeStandardPower }}</td>
+          <td>{{ vehicle.chargeStandardPhase }}</td>
+          <td>{{ vehicle.chargeStandardPhaseAmp }}</td>
+          <td>{{ vehicle.batteryCapacityFull }}</td>
+          <td>
+            <!-- Use Angular Router to navigate to the details page with vehicle ID as a parameter -->
+            <a [routerLink]="['/Third', vehicle.id]" (click)="redirectToDataTablePage(vehicle.id)">
+              <img [src]="vehicle.images" alt="Image">
+            </a>
+          </td>
+          <!-- Ajoutez les autres colonnes de données ici -->
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

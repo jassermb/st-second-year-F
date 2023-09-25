@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Selected Vehicle Details</h2>
+  
+  
+<div *ngIf="selectedVehicle"></div>
+    <h1>{{ selectedVehicle.vehicleMake }} {{ selectedVehicle.vehicleModel }}</h1>
+    <hr>
+    <!-- Display other vehicle details here -->
+    <p>Version: {{ selectedVehicle.vehicleModelVersion }}</p>
+    <hr>
+    <p>ID: {{ selectedVehicle.id }}</p>
+    <hr>
+    <p>Puissance: {{ selectedVehicle.drivetrainPowerHP }} HP</p>
+    <hr>
+    <p>Accélération : {{ selectedVehicle.performanceAcceleration }} sec</p>
+    <hr>
+    <p>Vitesse maximale: {{ selectedVehicle.performanceTopspeed }} km/h</p>
+    <hr>
+    <p>Autonomie (WLTP): {{ selectedVehicle.rangeWLTP }} km</p>
+    <hr>
+    <p>Portée (réelle): {{ selectedVehicle.rangeReal }} km</p>
+    <hr>
+    <p>Efficacité (réelle): {{ selectedVehicle.efficiencyReal }} kWh/100 km</p>
+    <hr>
+    <p>Prise de charge : {{ selectedVehicle.chargePlug }}</p>
+    <hr>
+    <p>Puissance de charge standard: {{ selectedVehicle.chargeStandardPower }} kW</p>
+    <hr>
+    <p>Phase de charge standard: {{ selectedVehicle.chargeStandardPhase }}</p>
+    <hr>
+    <p>Ampère de phase de charge standard: {{ selectedVehicle.chargeStandardPhaseAmp }}</p>
+    <hr>
+    <p>Prise de charge rapide: {{ selectedVehicle.fastChargePlug }}</p>
+    <hr>
+    <p>Puissance de charge rapide max : {{ selectedVehicle.fastChargePowerMax }} kW</p>
+    <hr>
+    <p>Capacité de la batterie pleine: {{ selectedVehicle.batteryCapacityFull }} kWh</p>
+    <hr>
+    <div *ngIf="selectedVehicle">
+      <!-- Use p-galleria to display the selected vehicle's images -->
+      <p-galleria [value]="selectedVehicle.images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }" [numVisible]="4">
+        <ng-template let-item pTemplate="item">
+          <img [src]="item.itemImageSrc" style="width: 100%;" />
+        </ng-template>
+        <ng-template let-item pTemplate="thumbnail">
+          <div class="grid grid-nogutter justify-content-center">
+            <img [src]="item.thumbnailImageSrc" />
+          </div>
+        </ng-template>
+      </p-galleria>
+  </div>
+  </div>
+
+
