@@ -1,5 +1,3 @@
-// login.component.ts
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -18,14 +16,10 @@ export class LoginComponent {
     console.log(this.email);
     console.log(this.password);
 
-    // Vérifier si les champs d'e-mail et de mot de passe sont valides avant de continuer avec le code de connexion.
     if (!this.isEmailValid(this.email) || !this.isPasswordValid(this.password)) {
-      // Afficher un message d'erreur si les champs ne sont pas valides.
       alert("Veuillez remplir correctement les champs d'e-mail et de mot de passe.");
       return;
     }
-
-    // Si les validations du formulaire sont correctes, continuez avec le reste du code de connexion.
 
     let bodyData = {
       email: this.email,
@@ -51,13 +45,11 @@ export class LoginComponent {
     );
   }
 
-  // Vérifier si l'e-mail est valide
   private isEmailValid(email: string): boolean {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
   }
 
-  // Vérifier si le mot de passe est valide (au moins 6 caractères)
   private isPasswordValid(password: string): boolean {
     return password.length >= 6;
   }
